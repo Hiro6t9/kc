@@ -14,24 +14,24 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 0%;
 
-    --primary: 0 0% 0%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 210 70% 40%;
+    --primary-foreground: 210 20% 98%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 210 40% 20%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 210 40% 40%;
 
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 210 40% 20%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 0%;
+    --border: 210 40% 90%;
+    --input: 210 40% 90%;
+    --ring: 210 40% 40%;
 
     --radius: 0.5rem;
 
@@ -61,15 +61,15 @@
 
 @layer components {
   .glass-card {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg transition-all duration-500 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)];
+    @apply bg-krinix-card/70 backdrop-blur-lg border border-krinix-border/30 rounded-lg transition-all duration-500 hover:bg-krinix-card hover:shadow-[0_0_20px_rgba(52,152,219,0.1)];
   }
   
   .hero-gradient {
     background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.3)
+      rgba(6, 26, 48, 0.9),
+      rgba(6, 26, 48, 0.7),
+      rgba(6, 26, 48, 0.5)
     );
   }
 
@@ -95,6 +95,40 @@
 
   .animate-scale-in {
     animation: scale-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  .page-transition-wrapper {
+    opacity: 0;
+    animation: page-reveal 1.5s ease forwards;
+  }
+
+  .page-reveal-item {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .page-reveal-item:nth-child(1) {
+    animation: reveal 0.6s ease forwards 0.2s;
+  }
+
+  .page-reveal-item:nth-child(2) {
+    animation: reveal 0.6s ease forwards 0.4s;
+  }
+
+  .page-reveal-item:nth-child(3) {
+    animation: reveal 0.6s ease forwards 0.6s;
+  }
+
+  .page-reveal-item:nth-child(4) {
+    animation: reveal 0.6s ease forwards 0.8s;
+  }
+
+  .page-reveal-item:nth-child(5) {
+    animation: reveal 0.6s ease forwards 1s;
+  }
+
+  .page-reveal-item:nth-child(6) {
+    animation: reveal 0.6s ease forwards 1.2s;
   }
 }
 
@@ -173,5 +207,37 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes page-reveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* For browsers that support it */
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
   }
 }

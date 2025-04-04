@@ -1,13 +1,13 @@
 
 import React from 'react';
-import { Discord } from 'lucide-react';
+import { MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const DiscordEmbed = () => {
   return (
     <div className="glass-card w-full max-w-lg mx-auto p-6 animate-on-scroll opacity-0">
       <div className="flex items-center gap-2 mb-6">
-        <Discord className="h-6 w-6 text-krinix-accent" />
+        <MessageSquare className="h-6 w-6 text-krinix-accent" />
         <h3 className="text-xl font-semibold">Join Our Discord</h3>
       </div>
       
@@ -34,7 +34,7 @@ const DiscordEmbed = () => {
         className="w-full bg-[#5865F2] hover:bg-[#4752c4] text-white"
         onClick={() => window.open('https://discord.gg/krinixcloud', '_blank')}
       >
-        <Discord className="w-5 h-5 mr-2" />
+        <MessageSquare className="w-5 h-5 mr-2" />
         Join Discord Server
       </Button>
     </div>

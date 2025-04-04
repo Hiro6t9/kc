@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -64,14 +63,14 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				krinix: {
-					bg: "#061a30",
+					bg: "#353935",
 					text: "#FFFFFF",
-					accent: "#3498db",
-					muted: "#8eacce",
-					light: "#b8d3e8",
-					border: "#1a365d",
-					card: "#0e2744",
-					hover: "#2980b9"
+					accent: "#CCCCFF",
+					muted: "#9999CC",
+					light: "#E6E6FF",
+					border: "#4D4D4D",
+					card: "#454545",
+					hover: "#AAAAE6"
 				}
 			},
 			borderRadius: {

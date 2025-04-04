@@ -5,15 +5,15 @@ import { Button } from '@/components/ui/button';
 
 const DiscordEmbed = () => {
   return (
-    <div className="glass-card w-full max-w-lg mx-auto p-6 animate-on-scroll opacity-0">
+    <div className="glass-card w-full max-w-lg mx-auto p-6 animate-on-scroll opacity-0 transition-all duration-500">
       <div className="flex items-center gap-2 mb-6">
         <MessageSquare className="h-6 w-6 text-krinix-accent" />
         <h3 className="text-xl font-semibold">Join Our Discord</h3>
       </div>
       
-      <div className="bg-[#2f3136] rounded-lg p-4 mb-4">
+      <div className="bg-[#2f3136] rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-lg">
         <div className="flex items-start space-x-4">
-          <div className="w-12 h-12 rounded-full bg-krinix-accent flex items-center justify-center text-white font-bold">
+          <div className="w-12 h-12 rounded-full bg-krinix-accent flex items-center justify-center text-white font-bold transition-transform duration-300 hover:scale-105">
             KC
           </div>
           <div className="flex-1">
@@ -31,7 +31,7 @@ const DiscordEmbed = () => {
       </div>
       
       <Button 
-        className="w-full bg-[#5865F2] hover:bg-[#4752c4] text-white"
+        className="w-full bg-[#5865F2] hover:bg-[#4752c4] text-white transition-all duration-300 rounded-xl"
         onClick={() => window.open('https://discord.gg/krinixcloud', '_blank')}
       >
         <MessageSquare className="w-5 h-5 mr-2" />

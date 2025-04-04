@@ -61,7 +61,10 @@
 
 @layer components {
   .glass-card {
-    @apply bg-krinix-card/70 backdrop-blur-lg border border-krinix-border/30 rounded-lg transition-all duration-500 hover:bg-krinix-card hover:shadow-[0_0_20px_rgba(52,152,219,0.1)];
+    @apply bg-krinix-card/70 backdrop-blur-lg border border-krinix-border/30 rounded-xl 
+           transition-all duration-500 hover:bg-krinix-card hover:shadow-[0_0_25px_rgba(52,152,219,0.15)]
+           hover:border-krinix-accent/20 ease-in-out;
+    box-shadow: 0 4px 20px -5px rgba(6, 26, 48, 0.2);
   }
   
   .hero-gradient {
@@ -99,7 +102,7 @@
 
   .page-transition-wrapper {
     opacity: 0;
-    animation: page-reveal 1.5s ease forwards;
+    animation: page-reveal 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
   }
 
   .page-reveal-item {
@@ -108,27 +111,47 @@
   }
 
   .page-reveal-item:nth-child(1) {
-    animation: reveal 0.6s ease forwards 0.2s;
+    animation: reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s;
   }
 
   .page-reveal-item:nth-child(2) {
-    animation: reveal 0.6s ease forwards 0.4s;
+    animation: reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.4s;
   }
 
   .page-reveal-item:nth-child(3) {
-    animation: reveal 0.6s ease forwards 0.6s;
+    animation: reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.6s;
   }
 
   .page-reveal-item:nth-child(4) {
-    animation: reveal 0.6s ease forwards 0.8s;
+    animation: reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.8s;
   }
 
   .page-reveal-item:nth-child(5) {
-    animation: reveal 0.6s ease forwards 1s;
+    animation: reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards 1s;
   }
 
   .page-reveal-item:nth-child(6) {
-    animation: reveal 0.6s ease forwards 1.2s;
+    animation: reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.2s;
+  }
+  
+  /* Smooth active link indication */
+  .nav-link {
+    position: relative;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: theme('colors.krinix.accent');
+    transition: width 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
   }
 }
 
@@ -150,7 +173,7 @@
     transform: scale(1);
   }
   50% {
-    opacity: 0.8;
+    opacity: 0.85;
     transform: scale(0.98);
   }
 }
@@ -190,7 +213,7 @@
 
 @keyframes scale-in {
   0% {
-    transform: scale(0.9);
+    transform: scale(0.95);
     opacity: 0;
   }
   100% {

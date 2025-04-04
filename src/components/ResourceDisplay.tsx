@@ -15,22 +15,31 @@ interface ResourceDisplayProps {
 const ResourceDisplay = ({ resources }: ResourceDisplayProps) => {
   return (
     <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div className="glass-card p-4 text-center flex flex-col items-center justify-center">
-        <Server className="h-10 w-10 mb-2 text-krinix-light" />
-        <h3 className="text-lg font-medium">RAM</h3>
-        <p className="text-3xl font-bold">{resources.ram} GB</p>
+      <div className="glass-card p-6 text-center flex flex-col items-center justify-center group transition-all duration-300 hover:translate-y-[-5px]">
+        <div className="relative">
+          <div className="absolute inset-0 bg-white/5 rounded-full blur-xl transform scale-75 group-hover:scale-100 transition-all duration-500"></div>
+          <Server className="h-12 w-12 mb-3 text-krinix-light relative z-10 group-hover:text-white transition-colors duration-300" />
+        </div>
+        <h3 className="text-lg font-medium mt-2">RAM</h3>
+        <p className="text-4xl font-bold mt-2 transition-all duration-300 group-hover:scale-110">{resources.ram} GB</p>
       </div>
       
-      <div className="glass-card p-4 text-center flex flex-col items-center justify-center">
-        <Database className="h-10 w-10 mb-2 text-krinix-light" />
-        <h3 className="text-lg font-medium">CPU</h3>
-        <p className="text-3xl font-bold">{resources.cpu} Cores</p>
+      <div className="glass-card p-6 text-center flex flex-col items-center justify-center group transition-all duration-300 hover:translate-y-[-5px]">
+        <div className="relative">
+          <div className="absolute inset-0 bg-white/5 rounded-full blur-xl transform scale-75 group-hover:scale-100 transition-all duration-500"></div>
+          <Database className="h-12 w-12 mb-3 text-krinix-light relative z-10 group-hover:text-white transition-colors duration-300" />
+        </div>
+        <h3 className="text-lg font-medium mt-2">CPU</h3>
+        <p className="text-4xl font-bold mt-2 transition-all duration-300 group-hover:scale-110">{resources.cpu} Cores</p>
       </div>
       
-      <div className="glass-card p-4 text-center flex flex-col items-center justify-center">
-        <HardDrive className="h-10 w-10 mb-2 text-krinix-light" />
-        <h3 className="text-lg font-medium">Storage</h3>
-        <p className="text-3xl font-bold">{resources.storage} GB</p>
+      <div className="glass-card p-6 text-center flex flex-col items-center justify-center group transition-all duration-300 hover:translate-y-[-5px]">
+        <div className="relative">
+          <div className="absolute inset-0 bg-white/5 rounded-full blur-xl transform scale-75 group-hover:scale-100 transition-all duration-500"></div>
+          <HardDrive className="h-12 w-12 mb-3 text-krinix-light relative z-10 group-hover:text-white transition-colors duration-300" />
+        </div>
+        <h3 className="text-lg font-medium mt-2">Storage</h3>
+        <p className="text-4xl font-bold mt-2 transition-all duration-300 group-hover:scale-110">{resources.storage} GB</p>
       </div>
     </div>
   );

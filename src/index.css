@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,272 +6,132 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    --card-foreground: 222.2 84% 4.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 240 70% 90%;
-    --primary-foreground: 240 10% 3.9%;
+    --primary: 252 100% 90%;
+    --primary-foreground: 252 100% 96%;
 
-    --secondary: 240 40% 96%;
-    --secondary-foreground: 240 40% 20%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 240 40% 96%;
-    --muted-foreground: 240 40% 40%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 240 40% 96%;
-    --accent-foreground: 240 40% 20%;
+    --accent: 252 100% 90%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 240 40% 90%;
-    --input: 240 40% 90%;
-    --ring: 240 40% 40%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 252 100% 90%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 0 0% 26.1%;
-    --sidebar-primary: 0 0% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 0 0% 95.9%;
-    --sidebar-accent-foreground: 0 0% 10%;
-    --sidebar-border: 0 0% 91%;
-    --sidebar-ring: 0 0% 59.8%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222.2 84% 4.9%;
+    --sidebar-primary: 252 100% 90%;
+    --sidebar-primary-foreground: 252 100% 96%;
+    --sidebar-accent: 252 100% 90%;
+    --sidebar-accent-foreground: 222.2 47.4% 11.2%;
+    --sidebar-border: 214.3 31.8% 91.4%;
+    --sidebar-ring: 252 100% 90%;
   }
 
-  html {
-    @apply scroll-smooth;
-  }
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
 
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 252 100% 90%;
+    --primary-foreground: 252 100% 96%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 252 100% 90%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 252 100% 90%;
+
+    --sidebar-background: 222.2 84% 4.9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 252 100% 90%;
+    --sidebar-primary-foreground: 252 100% 96%;
+    --sidebar-accent: 252 100% 90%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: 252 100% 90%;
+  }
+}
+
+@layer base {
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-krinix-bg text-krinix-text;
     font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
   }
 }
 
 @layer components {
   .glass-card {
-    @apply bg-krinix-card/80 backdrop-blur-xl border border-krinix-accent/20 rounded-2xl 
-           transition-all duration-500 hover:bg-krinix-card hover:shadow-[0_0_30px_rgba(204,204,255,0.15)]
-           hover:border-krinix-accent/30 ease-out;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    @apply bg-krinix-card/70 backdrop-blur-sm border border-krinix-accent/10 shadow-sm hover:shadow-krinix-accent/20 transition-all duration-500;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   }
   
-  .hero-gradient {
-    background: linear-gradient(
-      to bottom,
-      rgba(53, 57, 53, 0.95),
-      rgba(53, 57, 53, 0.8),
-      rgba(53, 57, 53, 0.6)
-    );
-  }
-
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  .animate-pulse-subtle {
-    animation: pulse-subtle 3s ease-in-out infinite;
-  }
-
-  .animate-slide-up {
-    animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-
-  .animate-slide-in-right {
-    animation: slide-in-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-
-  .animate-slide-in-left {
-    animation: slide-in-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-
-  .animate-scale-in {
-    animation: scale-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-  }
-
-  .page-transition-wrapper {
-    opacity: 0;
-    animation: page-reveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  }
-
-  .page-reveal-item {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  .page-reveal-item:nth-child(1) {
-    animation: reveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s;
-  }
-
-  .page-reveal-item:nth-child(2) {
-    animation: reveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.4s;
-  }
-
-  .page-reveal-item:nth-child(3) {
-    animation: reveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.6s;
-  }
-
-  .page-reveal-item:nth-child(4) {
-    animation: reveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.8s;
-  }
-
-  .page-reveal-item:nth-child(5) {
-    animation: reveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards 1s;
-  }
-
-  .page-reveal-item:nth-child(6) {
-    animation: reveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.2s;
+  .glow-effect {
+    @apply relative overflow-hidden;
   }
   
-  .nav-link {
-    position: relative;
-    @apply transition-all duration-300;
-  }
-  
-  .nav-link::after {
+  .glow-effect::before {
     content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: theme('colors.krinix.accent');
-    transition: width 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+    @apply absolute inset-0 bg-gradient-to-r from-krinix-accent/5 to-transparent rounded-xl opacity-0 transition-opacity duration-500;
   }
   
-  .nav-link:hover::after {
-    width: 100%;
+  .glow-effect:hover::before {
+    @apply opacity-100;
   }
   
-  .gradient-text {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-krinix-accent to-krinix-muted;
+  .slide-up {
+    animation: slideUp 0.6s ease-out forwards;
   }
   
-  .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
   
-  .glow-border {
-    box-shadow: 0 0 15px rgba(204, 204, 255, 0.5);
-    @apply border border-krinix-accent/30;
-  }
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-15px) rotate(2deg);
-  }
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-}
-
-@keyframes pulse-subtle {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.85;
-    transform: scale(0.98);
-  }
-}
-
-@keyframes slide-up {
-  0% {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slide-in-right {
-  0% {
-    transform: translateX(50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slide-in-left {
-  0% {
-    transform: translateX(-50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes scale-in {
-  0% {
-    transform: scale(0.95);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes page-reveal {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes reveal {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
+  .smooth-border {
+    @apply border border-krinix-accent/20 rounded-xl transition-colors duration-300 hover:border-krinix-accent/40;
   }
 }
